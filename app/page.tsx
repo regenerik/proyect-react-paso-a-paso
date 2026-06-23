@@ -1,65 +1,152 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen bg-neutral-950 p-8 text-white">
+      <section className="mx-auto max-w-4xl space-y-8">
+        <div>
+          <h1 className="text-4xl font-bold">
+            Clase de React con Next
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="mt-3 text-neutral-300">
+            Accesos a los ejemplos de la clase, en el orden en que los vamos a ver.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        <nav className="grid gap-4">
+          <Link
+            href="/variable-vs-estado"
+            className="rounded-xl border border-red-500 bg-red-950/40 p-5 transition hover:bg-red-900"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <h2 className="text-xl font-semibold text-red-200">
+              1. Variable normal vs estado local
+            </h2>
+
+            <p className="mt-2 text-red-100">
+              Comparación entre una variable let y un estado con useState.
+            </p>
+          </Link>
+
+          <Link
+            href="/eventos"
+            className="rounded-xl border border-blue-500 bg-blue-950/40 p-5 transition hover:bg-blue-900"
           >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            <h2 className="text-xl font-semibold text-blue-200">
+              2. Eventos: onClick y onChange
+            </h2>
+
+            <p className="mt-2 text-blue-100">
+              Diferentes formas de ejecutar handlers y recibir eventos.
+            </p>
+          </Link>
+
+          <Link
+            href="/padre"
+            className="rounded-xl border border-yellow-500 bg-yellow-950/40 p-5 transition hover:bg-yellow-900"
+          >
+            <h2 className="text-xl font-semibold text-yellow-200">
+              3. Padre e hijo con props
+            </h2>
+
+            <p className="mt-2 text-yellow-100">
+              El padre maneja estados locales y se los pasa al hijo.
+            </p>
+          </Link>
+
+          <Link
+            href="/ternarioyshort"
+            className="rounded-xl border border-purple-500 bg-purple-950/40 p-5 transition hover:bg-purple-900"
+          >
+            <h2 className="text-xl font-semibold text-purple-200">
+              4. Ternario y short circuit
+            </h2>
+
+            <p className="mt-2 text-purple-100">
+              Renderizado condicional usando un objeto en estado local.
+            </p>
+          </Link>
+
+          <Link
+            href="/use-effect"
+            className="rounded-xl border border-green-500 bg-green-950/40 p-5 transition hover:bg-green-900"
+          >
+            <h2 className="text-xl font-semibold text-green-200">
+              5. useEffect
+            </h2>
+
+            <p className="mt-2 text-green-100">
+              Ejemplos simples de efectos, dependencias y limpieza al desmontar.
+            </p>
+          </Link>
+
+          <Link
+            href="/mapeos"
+            className="rounded-xl border border-pink-500 bg-pink-950/40 p-5 transition hover:bg-pink-900"
+          >
+            <h2 className="text-xl font-semibold text-pink-200">
+              6. Mapeos con map
+            </h2>
+
+            <p className="mt-2 text-pink-100">
+              Renderizado de listas usando función flecha, cards y key con index.
+            </p>
+          </Link>
+
+          <Link
+            href="/estado-global"
+            className="rounded-xl border border-cyan-500 bg-cyan-950/40 p-5 transition hover:bg-cyan-900"
+          >
+            <h2 className="text-xl font-semibold text-cyan-200">
+              7. Estado global con Context + Reducer
+            </h2>
+
+            <p className="mt-2 text-cyan-100">
+              Guía paso a paso para crear un estado global usando context, reducer,
+              provider y dispatch.
+            </p>
+          </Link>
+
+          <Link
+            href="/padre2"
+            className="rounded-xl border border-orange-500 bg-orange-950/40 p-5 transition hover:bg-orange-900"
+          >
+            <h2 className="text-xl font-semibold text-orange-200">
+              8. Herencia 2.0 (children)
+            </h2>
+
+            <p className="mt-2 text-orange-100">
+              El padre renderiza al hijo y le pasa contenido entre la apertura y el cierre.
+            </p>
+          </Link>
+
+          <Link
+            href="/search-params?category=shoes"
+            className="rounded-xl border border-teal-500 bg-teal-950/40 p-5 transition hover:bg-teal-900"
+          >
+            <h2 className="text-xl font-semibold text-teal-200">
+              9. Search Params
+            </h2>
+
+            <p className="mt-2 text-teal-100">
+              Leer datos desde la URL usando useSearchParams y filtrar productos.
+            </p>
+          </Link>
+
+          <Link
+            href="/ventas"
+            className="rounded-xl border border-indigo-500 bg-indigo-950/40 p-5 transition hover:bg-indigo-900"
+          >
+            <h2 className="text-xl font-semibold text-indigo-200">
+              10. Dynamic Params: useParams
+            </h2>
+
+            <p className="mt-2 text-indigo-100">
+              Navegar a una URL dinámica como /ventas/7 y rescatar el id desde la ruta.
+            </p>
+          </Link>
+        </nav>
+      </section>
+    </main>
   );
 }
